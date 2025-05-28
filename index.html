@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header" style="position: relative;">
+            <h1 class="title">Todo App</h1>
+            <p class="subtitle">Stay organized and productive!</p>
+            <div class="progress-circle" id="progressCircle">0/0</div>
+        </div>
+
+        <div class="add-task-section">
+            <input type="text" class="task-input" id="taskInput" placeholder="Write your task">
+            <textarea class="description-input" id="descriptionInput" placeholder="Add description (optional)"></textarea>
+            <button class="add-btn" onclick="addTask()">Add Task</button>
+        </div>
+
+        <button class="clear-btn" onclick="clearCompleted()">Clear All Done</button>
+
+        <div class="columns">
+            <div class="column">
+                <div class="column-header todo-header">
+                    <span class="icon">🌸</span>
+                    <span>To Do</span>
+                    <span id="todoCount">0</span>
+                </div>
+                <div id="todoTasks"></div>
+            </div>
+
+            <div class="column">
+                <div class="column-header progress-header">
+                    <span class="icon">🌺</span>
+                    <span>In Progress</span>
+                    <span id="progressCount">0</span>
+                </div>
+                <div id="progressTasks"></div>
+            </div>
+
+            <div class="column">
+                <div class="column-header done-header">
+                    <span class="icon">🌹</span>
+                    <span>Done</span>
+                    <span id="doneCount">0</span>
+                </div>
+                <div id="doneTasks"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

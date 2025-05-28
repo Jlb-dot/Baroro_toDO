@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffd3e0 0%, #ffe0f0 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background: linear-gradient(135deg, #ff9bb8 0%, #ffb3d1 100%);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(255, 155, 184, 0.3);
+}
+
+.title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+.progress-circle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.add-task-section {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
+}
+
+.task-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ffb6d9;
+    border-radius: 15px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.task-input:focus {
+    border-color: #ff9bb8;
+}
+
+.description-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ffb6d9;
+    border-radius: 15px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    outline: none;
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.add-btn {
+    background: linear-gradient(135deg, #ff9bb8 0%, #ffb3d1 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+}
+
+.clear-btn {
+    background: #ff6b9d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+}
+
+.clear-btn:hover {
+    background: #ff5588;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.column {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
+}
+
+.column-header {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.column-header .icon {
+    font-size: 1.5rem;
+}
+
+.todo-header {
+    color: #ff6b9d;
+}
+
+.progress-header {
+    color: #ff8fab;
+}
+
+.done-header {
+    color: #ff9bb8;
+}
+
+.task-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 16px rgba(255, 182, 193, 0.15);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+}
+
+.task-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.task-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: #ff6b9d;
+}
+
+.action-btn:hover {
+    background: rgba(255, 107, 157, 0.1);
+}
+
+.delete-btn {
+    color: #ff5588;
+}
+
+.delete-btn:hover {
+    background: rgba(255, 85, 136, 0.1);
+}
+
+@media (max-width: 768px) {
+    .columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .progress-circle {
+        position: static;
+        margin-top: 20px;
+        margin-left: auto;
+    }
+}
