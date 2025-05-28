@@ -186,18 +186,22 @@ body {
 
 .task-actions {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     margin-top: 15px;
+    flex-wrap: wrap;
 }
 
 .action-btn {
     background: none;
     border: none;
-    padding: 8px;
+    padding: 8px 12px;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s;
     color: #ff6b9d;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .action-btn:hover {
