@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #ffd3e0 0%, #ffe0f0 100%);
@@ -52,6 +54,7 @@ body {
     font-size: 1.2rem;
 }
 
+
 .add-task-section {
     background: white;
     border-radius: 20px;
@@ -59,6 +62,7 @@ body {
     margin-bottom: 30px;
     box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
 }
+
 
 .task-input {
     width: 100%;
@@ -71,9 +75,11 @@ body {
     transition: border-color 0.3s;
 }
 
+
 .task-input:focus {
     border-color: #ff9bb8;
 }
+
 
 .description-input {
     width: 100%;

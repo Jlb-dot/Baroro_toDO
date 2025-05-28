@@ -2,16 +2,16 @@ let tasks = [];
 let taskIdCounter = 1;
 
 function addTask() {
-    const taskInput = document.getElementById('taskInput');
+const taskInput = document.getElementById('taskInput');
     const descriptionInput = document.getElementById('descriptionInput');
     
-    if (!taskInput.value.trim()) return;
+ if (!taskInput.value.trim()) return;
 
     const task = {
-        id: taskIdCounter++,
-        title: taskInput.value.trim(),
-        description: descriptionInput.value.trim(),
-        status: 'todo'
+    id: taskIdCounter++,
+    title: taskInput.value.trim(),
+    description: descriptionInput.value.trim(),
+    status: 'todo'
     };
 
     tasks.push(task);
@@ -25,7 +25,7 @@ function moveTask(id, newStatus) {
     if (task) {
         task.status = newStatus;
         renderTasks();
-    }
+}
 }
 
 function deleteTask(id) {
@@ -36,12 +36,13 @@ function deleteTask(id) {
 function clearCompleted() {
     tasks = tasks.filter(t => t.status !== 'done');
     renderTasks();
-}
+                        }
 
 function renderTasks() {
     const todoContainer = document.getElementById('todoTasks');
     const progressContainer = document.getElementById('progressTasks');
     const doneContainer = document.getElementById('doneTasks');
+
 
     todoContainer.innerHTML = '';
     progressContainer.innerHTML = '';
@@ -51,6 +52,7 @@ function renderTasks() {
     const progressTasks = tasks.filter(t => t.status === 'progress');
     const doneTasks = tasks.filter(t => t.status === 'done');
 
+    
     todoTasks.forEach(task => {
         todoContainer.appendChild(createTaskCard(task));
     });
@@ -63,7 +65,7 @@ function renderTasks() {
         doneContainer.appendChild(createTaskCard(task));
     });
 
-    
+
     document.getElementById('todoCount').textContent = todoTasks.length;
     document.getElementById('progressCount').textContent = progressTasks.length;
     document.getElementById('doneCount').textContent = doneTasks.length;
