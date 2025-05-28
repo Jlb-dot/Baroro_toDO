@@ -181,21 +181,21 @@ body {
 }
 
 .todo-card {
-    background: linear-gradient(135deg, #ffffff 0%, #fff8fb 100%);
+    background: linear-gradient(135deg, #f0c2d9 0%, #e8a5c7 100%);
     border-left: 4px solid #ff6b9d;
-    box-shadow: 0 4px 16px rgba(255, 107, 157, 0.15);
+    box-shadow: 0 4px 16px rgba(255, 107, 157, 0.3);
 }
 
 .progress-card {
-    background: linear-gradient(135deg, #ffffff 0%, #fffbf8 100%);
+    background: linear-gradient(135deg, #ffd9b3 0%, #ffcc99 100%);
     border-left: 4px solid #ff9966;
-    box-shadow: 0 4px 16px rgba(255, 153, 102, 0.15);
+    box-shadow: 0 4px 16px rgba(255, 153, 102, 0.3);
 }
 
 .done-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+    background: linear-gradient(135deg, #b3e6cc 0%, #99d6b8 100%);
     border-left: 4px solid #66cc99;
-    box-shadow: 0 4px 16px rgba(102, 204, 153, 0.15);
+    box-shadow: 0 4px 16px rgba(102, 204, 153, 0.3);
 }
 
 .task-card:hover {
