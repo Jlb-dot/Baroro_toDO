@@ -63,7 +63,7 @@ function renderTasks() {
         doneContainer.appendChild(createTaskCard(task));
     });
 
-    // Update counts
+    
     document.getElementById('todoCount').textContent = todoTasks.length;
     document.getElementById('progressCount').textContent = progressTasks.length;
     document.getElementById('doneCount').textContent = doneTasks.length;
@@ -78,18 +78,18 @@ function createTaskCard(task) {
         <div class="task-title">${task.title}</div>
         ${task.description ? `<div class="task-description">${task.description}</div>` : ''}
         <div class="task-actions">
-            ${task.status === 'todo' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'progress')">🦋</button>` : ''}
-            ${task.status === 'progress' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'done')">💖</button>` : ''}
-            ${task.status === 'progress' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'todo')">🌷</button>` : ''}
-            ${task.status === 'done' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'progress')">🌼</button>` : ''}
-            <button class="action-btn delete-btn" onclick="deleteTask(${task.id})">✨</button>
+            ${task.status === 'todo' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'progress')">🦋 Start</button>` : ''}
+            ${task.status === 'progress' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'done')">💖 Complete</button>` : ''}
+            ${task.status === 'progress' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'todo')">🌷 Back</button>` : ''}
+            ${task.status === 'done' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'progress')">🌼 Undo</button>` : ''}
+            <button class="action-btn delete-btn" onclick="deleteTask(${task.id})">✨ Delete</button>
         </div>
     `;
     
     return card;
 }
 
-// Allow Enter key to add task
+
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('taskInput').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
@@ -97,6 +97,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Initial render
     renderTasks();
 });
