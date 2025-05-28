@@ -1,13 +1,13 @@
 let tasks = [];
-let taskIdCounter = 1;
+let taskIdCounter =1;
 
 function addTask() {
 const taskInput = document.getElementById('taskInput');
-    const descriptionInput = document.getElementById('descriptionInput');
+    const descriptionInput =document.getElementById('descriptionInput');
     
- if (!taskInput.value.trim()) return;
+    if (!taskInput.value.trim()) return;
 
-    const task = {
+    const task ={
     id: taskIdCounter++,
     title: taskInput.value.trim(),
     description: descriptionInput.value.trim(),
@@ -20,25 +20,26 @@ const taskInput = document.getElementById('taskInput');
     renderTasks();
 }
 
-function moveTask(id, newStatus) {
-    const task = tasks.find(t => t.id === id);
-    if (task) {
-        task.status = newStatus;
-        renderTasks();
+function moveTask(id, newStatus){
+const task = tasks.find(t => t.id ===id);
+if (task) {
+    task.status = newStatus;
+    renderTasks();
 }
 }
 
-function deleteTask(id) {
-    tasks = tasks.filter(t => t.id !== id);
+function deleteTask(id){
+    tasks = tasks.filter(t => t.id !==id);
     renderTasks();
 }
 
-function clearCompleted() {
+
+function clearCompleted(){
     tasks = tasks.filter(t => t.status !== 'done');
     renderTasks();
                         }
 
-function renderTasks() {
+function renderTasks(){
     const todoContainer = document.getElementById('todoTasks');
     const progressContainer = document.getElementById('progressTasks');
     const doneContainer = document.getElementById('doneTasks');
@@ -52,16 +53,16 @@ function renderTasks() {
     const progressTasks = tasks.filter(t => t.status === 'progress');
     const doneTasks = tasks.filter(t => t.status === 'done');
 
-    
+
     todoTasks.forEach(task => {
         todoContainer.appendChild(createTaskCard(task));
     });
 
-    progressTasks.forEach(task => {
+    progressTasks.forEach(task =>{
         progressContainer.appendChild(createTaskCard(task));
     });
 
-    doneTasks.forEach(task => {
+    doneTasks.forEach(task =>{
         doneContainer.appendChild(createTaskCard(task));
     });
 
@@ -77,14 +78,14 @@ function createTaskCard(task) {
     card.className = 'task-card';
     
     card.innerHTML = `
-        <div class="task-title">${task.title}</div>
-        ${task.description ? `<div class="task-description">${task.description}</div>` : ''}
-        <div class="task-actions">
+    <div class="task-title">${task.title}</div>
+    ${task.description ? `<div class="task-description">${task.description}</div>` : ''}
+    <div class="task-actions">
             ${task.status === 'todo' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'progress')">🦋 Start</button>` : ''}
             ${task.status === 'progress' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'done')">💖 Complete</button>` : ''}
             ${task.status === 'progress' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'todo')">🌷 Back</button>` : ''}
             ${task.status === 'done' ? `<button class="action-btn" onclick="moveTask(${task.id}, 'progress')">🌼 Undo</button>` : ''}
-            <button class="action-btn delete-btn" onclick="deleteTask(${task.id})">✨ Delete</button>
+        <button class="action-btn delete-btn" onclick="deleteTask(${task.id})">✨ Delete</button>
         </div>
     `;
     

@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #ffd3e0 0%, #ffe0f0 100%);
@@ -54,7 +52,6 @@ body {
     font-size: 1.2rem;
 }
 
-
 .add-task-section {
     background: white;
     border-radius: 20px;
@@ -62,7 +59,6 @@ body {
     margin-bottom: 30px;
     box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
 }
-
 
 .task-input {
     width: 100%;
@@ -75,11 +71,9 @@ body {
     transition: border-color 0.3s;
 }
 
-
 .task-input:focus {
     border-color: #ff9bb8;
 }
-
 
 .description-input {
     width: 100%;
@@ -133,10 +127,24 @@ body {
 }
 
 .column {
-    background: rgba(255, 255, 255, 0.7);
     border-radius: 20px;
     padding: 25px;
     box-shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
+}
+
+.todo-column {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4e8 100%);
+    border: 2px solid #ffb6d9;
+}
+
+.progress-column {
+    background: linear-gradient(135deg, #fff5f0 0%, #ffe8e4 100%);
+    border: 2px solid #ffcc99;
+}
+
+.done-column {
+    background: linear-gradient(135deg, #f0fff5 0%, #e4ffe8 100%);
+    border: 2px solid #b3ffcc;
 }
 
 .column-header {
@@ -165,17 +173,45 @@ body {
 }
 
 .task-card {
-    background: white;
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 15px;
-    box-shadow: 0 4px 16px rgba(255, 182, 193, 0.15);
     cursor: pointer;
     transition: transform 0.2s;
 }
 
+.todo-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fff8fb 100%);
+    border-left: 4px solid #ff6b9d;
+    box-shadow: 0 4px 16px rgba(255, 107, 157, 0.15);
+}
+
+.progress-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fffbf8 100%);
+    border-left: 4px solid #ff9966;
+    box-shadow: 0 4px 16px rgba(255, 153, 102, 0.15);
+}
+
+.done-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+    border-left: 4px solid #66cc99;
+    box-shadow: 0 4px 16px rgba(102, 204, 153, 0.15);
+}
+
 .task-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+}
+
+.todo-card:hover {
+    box-shadow: 0 8px 24px rgba(255, 107, 157, 0.25);
+}
+
+.progress-card:hover {
+    box-shadow: 0 8px 24px rgba(255, 153, 102, 0.25);
+}
+
+.done-card:hover {
+    box-shadow: 0 8px 24px rgba(102, 204, 153, 0.25);
 }
 
 .task-title {
